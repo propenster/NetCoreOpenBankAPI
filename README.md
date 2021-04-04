@@ -5,7 +5,7 @@ We built a bank API using C# and ASP.NET Core on my YouTube channel
 
 
 
-* git clone
+* git clone https://github.com/propenster/NetCoreOpenBankAPI.git
 * set up directory on your local machine
 * replace connectionStrings value in appsettings.json with ConnectionString to your own Local/Remote SQL Server DB
 
