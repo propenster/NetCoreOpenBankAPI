@@ -58,7 +58,7 @@ namespace NetCoreOpenBankingAPI.Controllers
 
             var authResult = _userService.Authenticate(model.AccountNumber, model.Pin);
             if (authResult == null) return Unauthorized("Invalid Credentials");
-            return Ok();
+            return Ok(authResult);
         } 
     }
 }

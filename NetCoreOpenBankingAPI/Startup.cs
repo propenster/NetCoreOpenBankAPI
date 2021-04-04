@@ -32,6 +32,7 @@ namespace NetCoreOpenBankingAPI
 
             services.AddDbContext<MyDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("NetCoreOpenBankngConnection")));
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ITransactionService, TransactionService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
