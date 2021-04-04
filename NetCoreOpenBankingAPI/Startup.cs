@@ -14,6 +14,7 @@ using Microsoft.Extensions.Logging;
 using NetCoreOpenBankingAPI.DAL;
 using NetCoreOpenBankingAPI.Services.Implementations;
 using NetCoreOpenBankingAPI.Services.Interfaces;
+using NetCoreOpenBankingAPI.Utils;
 
 namespace NetCoreOpenBankingAPI
 {
@@ -33,6 +34,7 @@ namespace NetCoreOpenBankingAPI
             services.AddDbContext<MyDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("NetCoreOpenBankngConnection")));
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ITransactionService, TransactionService>();
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
